@@ -7,6 +7,12 @@ var choiceTwoDisplayEl = document.getElementById("choice2");
 var choiceThreeDisplayEl = document.getElementById("choice3");
 var choiceFourDisplayEl = document.getElementById("choice4");
 
+choiceOneDisplayEl.style.display = "none"
+choiceTwoDisplayEl.style.display = "none"
+choiceThreeDisplayEl.style.display = "none"
+choiceFourDisplayEl.style.display = "none"
+nextQuestionBtnEl.style.display = "none"
+
 
 var questionsArr = [
     {
@@ -50,50 +56,17 @@ var questionsArr = [
         correctAnswer: "Quotes"
     }
 ]
-// function nextQuestion(i) {
-//     getQuestion();
-//     getChoiceOne();
-//     getChoiceTwo(); 
-//     getChoiceThree();
-//     getChoiceFour();
-
-//     function getQuestion() {
-//         return questionDisplayEl.textContent = questionsArr[i].question;
-//     }
-
-//     function getChoiceOne() {
-//         return choiceOneDisplayEl.textContent = questionsArr[i].choiceOne;
-//     }
-
-//     function getChoiceTwo() {
-//         return choiceTwoDisplayEl.textContent = questionsArr[i].choiceTwo;
-//     }
-
-//     function getChoiceThree() {
-//         return choiceThreeDisplayEl.textContent = questionsArr[i].choiceThree;
-//     }
-
-//     function getChoiceFour() {
-//         return choiceFourDisplayEl.textContent = questionsArr[i].choiceFour;
-//     }
-
-// }
-
-// window.nextQuestionIndex = 0;
-
-// nextQuestionBtnEl.addEventListener("click", function(){
-//     if(window.nextQuestionIndex < questionsArr.length){
-//   nextQuestion(window.nextQuestionIndex);
-//   window.nextQuestionIndex++;
-// } else {
-//     alert("No more questions!");
-// }
-// });
 
 startQuizBtnEl.addEventListener("click", function () {
 
-    startQuizBtnEl.style.display = 'none';    
+    startQuizBtnEl.style.display = 'none';
+    choiceOneDisplayEl.style.display = ""
+    choiceTwoDisplayEl.style.display = ""
+    choiceThreeDisplayEl.style.display = ""
+    choiceFourDisplayEl.style.display = ""  
+    nextQuestionBtnEl.style.display = "" 
     console.log('hits')
+    
 
     for(var i = 0; i < questionsArr.length; i ++){
         console.log(questionsArr[i].question) 
@@ -102,32 +75,21 @@ startQuizBtnEl.addEventListener("click", function () {
             choiceTwoDisplayEl.textContent = questionsArr[i].choiceTwo;
             choiceThreeDisplayEl.textContent = questionsArr[i].choiceThree;
             choiceFourDisplayEl.textContent = questionsArr[i].choiceFour; 
-
-        return nextQuestionBtnEl.addEventListener("click", function() {
             i++
+        return nextQuestionBtnEl.addEventListener("click", function() {
             console.log('111', i)
-            if ( i< questionsArr.length) {
+            if ( i < questionsArr.length) {
                 questionDisplayEl.innerHTML = questionsArr[i].question;    
                 choiceOneDisplayEl.textContent = questionsArr[i].choiceOne;
                 choiceTwoDisplayEl.textContent = questionsArr[i].choiceTwo;
                 choiceThreeDisplayEl.textContent = questionsArr[i].choiceThree;
                 choiceFourDisplayEl.textContent = questionsArr[i].choiceFour;
+                i++
             } else {
                 alert('no more question')
-            } 
+            }
+            
         })
-        }
-        
-            // questionDisplayEl.innerHTML = questionsArr[i].question;    
-            // choiceOneDisplayEl.textContent = questionsArr[i].choiceOne;
-            // choiceTwoDisplayEl.textContent = questionsArr[i].choiceTwo;
-            // choiceThreeDisplayEl.textContent = questionsArr[i].choiceThree;
-            // choiceFourDisplayEl.textContent = questionsArr[i].choiceFour;
-        
-
-        // nextQuestionBtnEl.addEventListener("click", function () {
-        //     i = i + 1;    
-
-        // })
-    
+    }
 })
+
