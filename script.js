@@ -1,4 +1,3 @@
-
 var startQuizBtnEl = document.getElementById("start-quiz")
 var nextQuestionBtnEl = document.getElementById("nextQuestion")
 var questionDisplayEl = document.getElementById("questionDisplay");
@@ -6,6 +5,8 @@ var choiceOneDisplayEl = document.getElementById("choice1");
 var choiceTwoDisplayEl = document.getElementById("choice2");
 var choiceThreeDisplayEl = document.getElementById("choice3");
 var choiceFourDisplayEl = document.getElementById("choice4");
+var finishQuizDivEl = document.getElementById("finishedQuiz");
+var scoreEl = document.getElementById("score");
 
 choiceOneDisplayEl.style.display = "none"
 choiceTwoDisplayEl.style.display = "none"
@@ -13,6 +14,8 @@ choiceThreeDisplayEl.style.display = "none"
 choiceFourDisplayEl.style.display = "none"
 nextQuestionBtnEl.style.display = "none"
 
+
+var points = 0;
 
 var questionsArr = [
     {
@@ -86,7 +89,14 @@ startQuizBtnEl.addEventListener("click", function () {
                     choiceFourDisplayEl.textContent = questionsArr[i].choiceFour;
                     i++
                 } else {
-                    alert('no more question')
+                    choiceOneDisplayEl.style.display = 'none'
+                    choiceTwoDisplayEl.style.display = 'none'
+                    choiceThreeDisplayEl.style.display = 'none'
+                    choiceFourDisplayEl.style.display = 'none'  
+                    nextQuestionBtnEl.style.display = 'none' 
+                    finishQuizDivEl.innerHTML = 'You finished the quiz'
+                    scoreEl.innerHTML = "You scored: " + points
+                    
                 }
                
         })
@@ -96,16 +106,23 @@ startQuizBtnEl.addEventListener("click", function () {
         console.log('this', event.target.innerHTML)
             if (event.target.innerHTML == questionsArr[0].correctAnswer) {
                 console.log('correct')
+                points += 10;
             } else if (event.target.innerHTML == questionsArr[1].correctAnswer) {
                 console.log('correct 1')
+                points += 10;
             } else if (event.target.innerHTML == questionsArr[2].correctAnswer) {
                 console.log('correct 2')
+                points += 10;
             } else if (event.target.innerHTML == questionsArr[3].correctAnswer) {
                 console.log('correct 3') 
+                points += 10;
+
             } else if (event.target.innerHTML == questionsArr[4].correctAnswer) {
                 console.log('correct 4')
+                points += 10;
             } else {
                 console.log('wrong')
+                points -= 10;
             }
     })
     
@@ -113,16 +130,23 @@ startQuizBtnEl.addEventListener("click", function () {
         console.log('this', event.target.innerHTML)
         if (event.target.innerHTML == questionsArr[0].correctAnswer) {
             console.log('correct')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[1].correctAnswer) {
             console.log('correct 1')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[2].correctAnswer) {
             console.log('correct 2')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[3].correctAnswer) {
             console.log('correct 3') 
+            points += 10;
+
         } else if (event.target.innerHTML == questionsArr[4].correctAnswer) {
             console.log('correct 4')
+            points += 10;
         } else {
             console.log('wrong')
+            points -= 10;
         }
     })
     
@@ -130,16 +154,23 @@ startQuizBtnEl.addEventListener("click", function () {
         console.log('this', event.target.innerHTML)
         if (event.target.innerHTML == questionsArr[0].correctAnswer) {
             console.log('correct')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[1].correctAnswer) {
             console.log('correct 1')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[2].correctAnswer) {
             console.log('correct 2')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[3].correctAnswer) {
             console.log('correct 3') 
+            points += 10;
+
         } else if (event.target.innerHTML == questionsArr[4].correctAnswer) {
             console.log('correct 4')
+            points += 10;
         } else {
             console.log('wrong')
+            points -= 10;
         }
     })
     
@@ -147,18 +178,23 @@ startQuizBtnEl.addEventListener("click", function () {
         console.log('this', event.target.innerHTML)
         if (event.target.innerHTML == questionsArr[0].correctAnswer) {
             console.log('correct')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[1].correctAnswer) {
             console.log('correct 1')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[2].correctAnswer) {
             console.log('correct 2')
+            points += 10;
         } else if (event.target.innerHTML == questionsArr[3].correctAnswer) {
             console.log('correct 3') 
+            points += 10;
+
         } else if (event.target.innerHTML == questionsArr[4].correctAnswer) {
             console.log('correct 4')
+            points += 10;
         } else {
             console.log('wrong')
+            points -= 10;
         }
     })
-    
-
     
